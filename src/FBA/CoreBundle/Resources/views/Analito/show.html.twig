@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Analito</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Metodo</th>
+                <td>{{ entity.metodo }}</td>
+            </tr>
+            <tr>
+                <th>Calibrador</th>
+                <td>{{ entity.calibrador }}</td>
+            </tr>
+            <tr>
+                <th>Reactivo</th>
+                <td>{{ entity.reactivo }}</td>
+            </tr>
+            <tr>
+                <th>Papelfiltro</th>
+                <td>{{ entity.papelFiltro }}</td>
+            </tr>
+            <tr>
+                <th>Valorcorte</th>
+                <td>{{ entity.valorCorte }}</td>
+            </tr>
+            <tr>
+                <th>Comentario</th>
+                <td>{{ entity.comentario }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('analito') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('analito_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

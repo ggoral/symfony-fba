@@ -1,0 +1,7 @@
+parameters:
+#    fba_core.example.class: FBA\CoreBundle\Example
+
+services:
+#    fba_core.example:
+#        class: %fba_core.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

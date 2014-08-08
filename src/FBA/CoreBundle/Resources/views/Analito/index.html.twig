@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Analito list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Metodo</th>
+                <th>Calibrador</th>
+                <th>Reactivo</th>
+                <th>Papelfiltro</th>
+                <th>Valorcorte</th>
+                <th>Comentario</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('analito_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.metodo }}</td>
+                <td>{{ entity.calibrador }}</td>
+                <td>{{ entity.reactivo }}</td>
+                <td>{{ entity.papelFiltro }}</td>
+                <td>{{ entity.valorCorte }}</td>
+                <td>{{ entity.comentario }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('analito_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('analito_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('analito_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

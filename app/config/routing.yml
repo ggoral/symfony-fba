@@ -1,0 +1,4 @@
+fba_core:
+    resource: "@FBACoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
