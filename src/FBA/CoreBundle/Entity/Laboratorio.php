@@ -421,4 +421,40 @@ class Laboratorio
     {
         return $this->empresa;
     }
+
+    /**
+     * @ORM\OneToMany(targetEntity="Resultado", mappedBy="laboratorio")
+     */
+    private $resultados;
+    public function __construct()
+    {
+        $this->resultados = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->vigencias = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    public function addResultados(\FBA\CoreBundle\Entity\Resultado $resultados)
+    {
+        $this->resultados[] = $resultados;
+    }
+
+    public function getResultados()
+    {
+        return $this->resultados;
+    }
+
+    /**
+     * @ORM\OneToMany(targetEntity="Vigencia", mappedBy="laboratorio")
+     */
+    private $vigencias;
+
+    public function addVigencias(\FBA\CoreBundle\Entity\Vigencia $vigencias)
+    {
+        $this->vigencias[] = $vigencias;
+    }
+
+    public function getVigencias()
+    {
+        return $this->vigencias;
+    }
+
+
 }

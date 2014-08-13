@@ -121,4 +121,20 @@ class Muestra
     {
         return $this->decision;
     }
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Resultado", inversedBy="muestras")
+     * @ORM\JoinColumn(name="resultado_id", referencedColumnName="id")
+     * @return integer
+     */
+    private $resultado;
+    public function setResultado(\FBA\CoreBundle\Entity\Resultado $resultado)
+    {
+        $this->resultado = $resultado;
+    }
+
+    public function getResultado()
+    {
+        return $this->resultado;
+    }
 }

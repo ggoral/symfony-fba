@@ -91,4 +91,23 @@ class Encuesta
     {
         return $this->fechaFin;
     }
+
+    /**
+     * @ORM\OneToMany(targetEntity="Resultado", mappedBy="encuesta")
+     */
+    private $resultados;
+    public function __construct()
+    {
+        $this->resultados = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    public function addResultados(\FBA\CoreBundle\Entity\Resultado $resultados)
+    {
+        $this->resultados[] = $resultados;
+    }
+
+    public function getResultados()
+    {
+        return $this->resultados;
+    }
+
 }

@@ -213,16 +213,31 @@ class Analito
     }
 
     /**
-     * @ORM\ManyToMany(targetEntity="Vigencia")
-     * @ORM\JoinTable(name="analito_vigencia",
-     *     joinColumns={@ORM\JoinColumn(name="analito_id", referencedColumnName="id")},
-     *     inverseJoinColumns={@ORM\JoinColumn(name="vigencia_id", referencedColumnName="id")}
-     * )
+     * @ORM\ManyToMany(targetEntity="Vigencia", inversedBy="analitos")
+     * @ORM\JoinTable(name="analito_vigencia")
      */
-    protected $analito_vigencias;
- 
+
+    private $vigencias;
+
     public function __construct()
     {
-        $this->analito_vigencias = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->vigencias = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->resultados = new \Doctrine\Common\Collections\ArrayCollection();
     }
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Resultado", mappedBy="analito")
+     */
+    private $resultados;
+
+    public function addResultados(\FBA\CoreBundle\Entity\Resultado $resultados)
+    {
+        $this->resultados[] = $resultados;
+    }
+
+    public function getResultados()
+    {
+        return $this->resultados;
+    }
+
 }
