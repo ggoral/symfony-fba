@@ -6,6 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class AnalitoControllerTest extends WebTestCase
 {
+    public function testIndex(){
+ 
+        $this->assertTrue(True);
+ 
+        }
     /*
     public function testCompleteScenario()
     {
