@@ -430,6 +430,7 @@ class Laboratorio
     {
         $this->resultados = new \Doctrine\Common\Collections\ArrayCollection();
         $this->vigencias = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->usuarios = new \Doctrine\Common\Collections\ArrayCollection();
     }
     public function addResultados(\FBA\CoreBundle\Entity\Resultado $resultados)
     {
@@ -455,6 +456,22 @@ class Laboratorio
     {
         return $this->vigencias;
     }
+
+    /**
+     * @ORM\OneToMany(targetEntity="User", mappedBy="laboratorio")
+     */
+    private $usuarios;
+
+    public function addUsuarios(\FBA\CoreBundle\Entity\User $usuarios)
+    {
+        $this->usuarios[] = $usuarios;
+    }
+
+    public function getUsuarios()
+    {
+        return $this->usuarios;
+    }
+
 
 
 }

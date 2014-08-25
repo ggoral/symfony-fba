@@ -63,12 +63,12 @@ class AnalitoController extends Controller
     }
 
     /**
-    * Creates a form to create a Analito entity.
-    *
-    * @param Analito $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to create a Analito entity.
+     *
+     * @param Analito $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createCreateForm(Analito $entity)
     {
         $form = $this->createForm(new AnalitoType(), $entity, array(

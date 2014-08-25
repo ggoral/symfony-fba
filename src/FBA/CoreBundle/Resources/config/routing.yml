@@ -1,6 +1,7 @@
 fba_core_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: FBACoreBundle:Default:index }
+
 FBAAnnotations:
     resource: "@FBACoreBundle/Controller/"
     prefix:   /

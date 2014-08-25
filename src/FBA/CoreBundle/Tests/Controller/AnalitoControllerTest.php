@@ -6,11 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class AnalitoControllerTest extends WebTestCase
 {
-    public function testIndex(){
- 
-        $this->assertTrue(True);
- 
-        }
     /*
     public function testCompleteScenario()
     {
@@ -24,7 +19,7 @@ class AnalitoControllerTest extends WebTestCase
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'fba_corebundle_analitotype[field_name]'  => 'Test',
+            'fba_corebundle_analito[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -37,8 +32,8 @@ class AnalitoControllerTest extends WebTestCase
         // Edit the entity
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
-        $form = $crawler->selectButton('Edit')->form(array(
-            'fba_corebundle_analitotype[field_name]'  => 'Foo',
+        $form = $crawler->selectButton('Update')->form(array(
+            'fba_corebundle_analito[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 
