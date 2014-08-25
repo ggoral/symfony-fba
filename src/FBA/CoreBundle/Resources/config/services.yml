@@ -5,3 +5,7 @@ services:
 #    fba_core.example:
 #        class: %fba_core.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    fba_core.registration.form.type:
+        class: FBA\CoreBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: acme_user_registration }
