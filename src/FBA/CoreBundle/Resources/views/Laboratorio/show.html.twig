@@ -1,0 +1,80 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Laboratorio</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Codigo</th>
+                <td>{{ entity.codigo }}</td>
+            </tr>
+            <tr>
+                <th>Institucion</th>
+                <td>{{ entity.institucion }}</td>
+            </tr>
+            <tr>
+                <th>Sector</th>
+                <td>{{ entity.sector }}</td>
+            </tr>
+            <tr>
+                <th>Responsable</th>
+                <td>{{ entity.responsable }}</td>
+            </tr>
+            <tr>
+                <th>Domicilio</th>
+                <td>{{ entity.domicilio }}</td>
+            </tr>
+            <tr>
+                <th>Correspondencia</th>
+                <td>{{ entity.correspondencia }}</td>
+            </tr>
+            <tr>
+                <th>Ciudad</th>
+                <td>{{ entity.ciudad }}</td>
+            </tr>
+            <tr>
+                <th>Pais</th>
+                <td>{{ entity.pais }}</td>
+            </tr>
+            <tr>
+                <th>Codigopostal</th>
+                <td>{{ entity.codigoPostal }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ entity.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Tipolaboratorio</th>
+                <td>{{ entity.tipoLaboratorio }}</td>
+            </tr>
+            <tr>
+                <th>Empresa</th>
+                <td>{{ entity.empresa }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('laboratorio') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('laboratorio_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
